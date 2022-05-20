@@ -21,7 +21,7 @@ USE WideWorldImporters
 */
 
 /*
-1) Написать функцию возвращающую Клиента с наибольшей invoces.InvoiceID.
+1) Написать функцию возвращающую Клиента с наибольшей суммой покупок
 */
 Go
 
@@ -30,14 +30,12 @@ Returns Table
 As
 Return
 (
-	Select customers.CustomerID, customers.CustomerName, invoices.InvoiceID
-	From Sales.Invoices invoices
-	Inner Join Sales.Customers customers on invoices.CustomerID = customers.CustomerID
-	Where invoices.InvoiceID = 
-	(
-		Select Max(InvoiceID)
-		From Sales.Invoices
-	)
+	Select Top 1 customers.CustomerID, customers.CustomerName, Sum(lines.ExtendedPrice) Amount
+	From Sales.Invoices invoces 
+	Inner Join Sales.InvoiceLines lines on invoces.InvoiceID = lines.InvoiceID
+	Inner Join Sales.Customers customers on invoces.CustomerID = customers.CustomerID
+	Group By customers.CustomerID, customers.CustomerName
+	Order by Amount desc
 )
 Go
 
