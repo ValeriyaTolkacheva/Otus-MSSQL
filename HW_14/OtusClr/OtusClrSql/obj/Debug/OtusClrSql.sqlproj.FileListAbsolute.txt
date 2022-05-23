@@ -1,0 +1,10 @@
+D:\OtusHomeWork\OtusClr\OtusClrSql\bin\Debug\OtusClrSql.dacpac
+D:\OtusHomeWork\OtusClr\OtusClrSql\bin\Debug\OtusClrSql.dll
+D:\OtusHomeWork\OtusClr\OtusClrSql\bin\Debug\OtusClrSql.pdb
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\OtusClrSql.sqlproj.AssemblyReference.cache
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\Model.xml
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\refactor.xml
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\postdeploy.sql
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\predeploy.sql
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\OtusClrSql.dll
+D:\OtusHomeWork\OtusClr\OtusClrSql\obj\Debug\OtusClrSql.pdb

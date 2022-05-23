@@ -1,0 +1,5 @@
+C:\Users\Valeriya\source\repos\OtusClr\OtusClrSql\bin\Release\OtusClrSql.dacpac
+C:\Users\Valeriya\source\repos\OtusClr\OtusClrSql\bin\Release\OtusClrSql.dll
+C:\Users\Valeriya\source\repos\OtusClr\OtusClrSql\bin\Release\OtusClrSql.pdb
+C:\Users\Valeriya\source\repos\OtusClr\OtusClrSql\obj\Release\OtusClrSql.dll
+C:\Users\Valeriya\source\repos\OtusClr\OtusClrSql\obj\Release\OtusClrSql.pdb
