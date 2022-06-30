@@ -1,0 +1,10 @@
+C:\Users\Valeriya\source\repos\Generators\Generators\bin\Debug\Generators.dacpac
+C:\Users\Valeriya\source\repos\Generators\Generators\bin\Debug\Generators.dll
+C:\Users\Valeriya\source\repos\Generators\Generators\bin\Debug\Generators.pdb
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\Generators.sqlproj.AssemblyReference.cache
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\Model.xml
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\refactor.xml
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\postdeploy.sql
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\predeploy.sql
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\Generators.dll
+C:\Users\Valeriya\source\repos\Generators\Generators\obj\Debug\Generators.pdb

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HotelsGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "Иваново Иркутск Смоленск Сургут"
+    }
+  }
+}
