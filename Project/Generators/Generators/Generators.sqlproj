@@ -63,6 +63,10 @@
     <Compile Include="FillEmptyHotels.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Staff.cs" />
+    <Compile Include="FillOrders.cs" />
+    <Compile Include="FillGuest.cs" />
+    <Compile Include="FillService.cs" />
+    <Compile Include="FillInvoice.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

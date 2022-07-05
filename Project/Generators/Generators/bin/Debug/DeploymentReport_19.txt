@@ -1,0 +1,31 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [Generators] (Assembly)
+     Create
+       [Generators] (Assembly)
+       [dbo].[FillInvoice] (Procedure)
+
+** Supporting actions
+     Drop
+       [dbo].[FillEmptyHotels] (Procedure)
+       [dbo].[FillBooking] (Procedure)
+       [dbo].[FillGuest] (Procedure)
+       [dbo].[FillService] (Procedure)
+     Create
+       [dbo].[FillEmptyHotels] (Procedure)
+       [dbo].[FillBooking] (Procedure)
+       [dbo].[FillGuest] (Procedure)
+       [dbo].[FillService] (Procedure)
+
+The project and target databases have different collation settings. Deployment errors might occur.
+
