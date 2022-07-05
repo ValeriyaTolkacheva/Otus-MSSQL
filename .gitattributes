@@ -1,1 +1,2 @@
 *.sql diff
+*.cs diff=csharp
