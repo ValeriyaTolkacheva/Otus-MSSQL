@@ -1,7 +1,7 @@
 Use Hotels
 Go
 
-Create Procedure [Order].AddService(@BookingId BigInt, @ServiceTypeId Int, @RoomId Int, @StartTime DateTime2, @VisitorId BigInt)
+Alter Procedure [Order].AddService(@BookingId BigInt, @ServiceTypeId Int, @RoomId Int, @StartTime DateTime2, @VisitorId BigInt)
 As
 Begin
 	SET XACT_ABORT ON;
@@ -64,10 +64,32 @@ Begin
 	If (@getRoom Is Not Null)
 		throw 50002, 'ѕомещение уже зан€то', 3
 
+	Declare @HotelId Int = 
+	(
+		Select Hotel.HotelId
+		From [Catalog].Hotel
+		Inner Join [Catalog].Room On Hotel.HotelId = Room.RoomId
+		Inner Join [Order].Booking On Booking.RoomId = Room.RoomId
+		Where BookingId = @BookingId
+	)
+
 	--создаем услугу
 	Insert Into [Order].[Service](BookingId, ServiceTypeId, RoomId, StartTime, VisitorId)
 	Values						(@BookingId, @ServiceTypeId, @RoomId, @StartTime, @VisitorId)
-	Declare @ServiceId BigInt = Cast(Scope_Identity() As Bigint)
+	Declare @ServiceId BigInt = Cast(Ident_Current('[Order].[Service]') As Bigint)
+	
+	--print @HotelId
+	--print '@BookingId ='
+	--print @BookingId
+	--print '@ServiceTypeId ='
+	--print @ServiceTypeId
+	--print '@RoomId ='
+	--print @RoomId
+	--print '@StartTime ='
+	--print @StartTime
+	--print '@VisitorId ='
+	--print @VisitorId
+
 
 	Declare @staffType Int
 	Declare staffTypesCursor Cursor For
@@ -79,15 +101,17 @@ Begin
 	While @@Fetch_Status = 0
 	Begin
 		--выбор исполнител€, если его нет, то ошибка
+		--print '@staffType ='
+		--print @staffType
 		Declare @staffId Int = 
 		(
-			Select Staff.StaffId
+			Select Top 1 Staff.StaffId
 			From [People].Staff
-			Inner Join [Catalog].Room On Staff.HotelId = Room.HotelId And Room.RoomId = @RoomId
-			Inner Join [Order].[Shift] On Staff.StaffId = [Shift].StaffId
-			Inner Join [Order].[Service] On [Shift].ServiceId = [Service].ServiceId
-			Inner Join [Dictionary].ServiceType On [Service].ServiceTypeId = ServiceType.ServiceTypeId
-			Where Not
+			Inner Join [Dictionary].StaffType On  Staff.StaffTypeId = StaffType.StaffTypeId And Staff.StaffTypeId = @staffType And Staff.HotelId = @HotelId
+			Left Join [Order].[Shift] On Staff.StaffId = [Shift].StaffId
+			Left Join [Order].[Service] On [Shift].ServiceId = [Service].ServiceId
+			Left Join [Dictionary].ServiceType On [Service].ServiceTypeId = ServiceType.ServiceTypeId
+			Where [Service].ServiceId Is Null Or Not
 					(
 						@StartTime Between StartTime And Case When Dyration Is Not Null Then DateAdd(HH, Dyration, StartTime) Else StartTime End Or
 						@endTime Between StartTime And Case When Dyration Is Not Null Then DateAdd(HH, Dyration, StartTime) Else StartTime End Or
@@ -99,6 +123,7 @@ Begin
 			Throw 50003, 'Ќедостаточно персонала дл€ заказа', 4
 		--создаем смену 
 		Exec [Order].AddShift @StaffId = @staffId, @ServiceId = @ServiceId
+		Fetch Next From staffTypesCursor Into @staffType
 	End
 	Close staffTypesCursor
 	Deallocate staffTypesCursor
