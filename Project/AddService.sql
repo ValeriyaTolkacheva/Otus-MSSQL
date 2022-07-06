@@ -1,7 +1,7 @@
 Use Hotels
 Go
 
-Alter Procedure [Order].AddService(@BookingId BigInt, @ServiceTypeId Int, @RoomId Int, @StartTime DateTime2, @VisitorId BigInt)
+Create Procedure [Order].AddService(@BookingId BigInt, @ServiceTypeId Int, @RoomId Int, @StartTime DateTime2, @VisitorId BigInt)
 As
 Begin
 	SET XACT_ABORT ON;
@@ -68,7 +68,7 @@ Begin
 	(
 		Select Hotel.HotelId
 		From [Catalog].Hotel
-		Inner Join [Catalog].Room On Hotel.HotelId = Room.RoomId
+		Inner Join [Catalog].Room On Hotel.HotelId = Room.HotelId
 		Inner Join [Order].Booking On Booking.RoomId = Room.RoomId
 		Where BookingId = @BookingId
 	)
@@ -77,18 +77,6 @@ Begin
 	Insert Into [Order].[Service](BookingId, ServiceTypeId, RoomId, StartTime, VisitorId)
 	Values						(@BookingId, @ServiceTypeId, @RoomId, @StartTime, @VisitorId)
 	Declare @ServiceId BigInt = Cast(Ident_Current('[Order].[Service]') As Bigint)
-	
-	--print @HotelId
-	--print '@BookingId ='
-	--print @BookingId
-	--print '@ServiceTypeId ='
-	--print @ServiceTypeId
-	--print '@RoomId ='
-	--print @RoomId
-	--print '@StartTime ='
-	--print @StartTime
-	--print '@VisitorId ='
-	--print @VisitorId
 
 
 	Declare @staffType Int
@@ -101,8 +89,6 @@ Begin
 	While @@Fetch_Status = 0
 	Begin
 		--выбор исполнителя, если его нет, то ошибка
-		--print '@staffType ='
-		--print @staffType
 		Declare @staffId Int = 
 		(
 			Select Top 1 Staff.StaffId
