@@ -1,0 +1,324 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="31eed114-ae9d-4557-a463-6d93670dc739" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Booking</ID>
+  <Name>Booking</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="7ed404dc-4bc0-4cc2-8a86-968c89b8f5f3">
+    <DataSourceViewID>DWH Hotels</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="c3efd76c-687e-4482-86e5-328f81d58f5c">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="5c47c8c9-fd04-4009-8d65-a637c1ba4720">
+      <ID>Booking Id</ID>
+      <Name>Booking Id</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0994ef0f-5a8f-4449-989a-c7444fa9a6c9">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0d58e299-ffd3-4757-8c3a-4224efd5840e">
+            <TableID>Facts_Booking</TableID>
+            <ColumnID>BookingId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="df83ee16-f2cd-4b50-a53e-49af10a8bc98">
+          <AttributeID>Booking Price</AttributeID>
+          <Name>Booking Price</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cc1698b5-f3c6-4a73-8ae7-504a6b44f7b7">
+          <AttributeID>Date Key</AttributeID>
+          <Name>Date Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="61e6ea4f-b17b-413e-bba7-a3bf7f4bdcc9">
+          <AttributeID>Room Id</AttributeID>
+          <Name>Room Id</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e0119115-2f87-49fd-84fd-558e318b8989">
+      <ID>Booking Price</ID>
+      <Name>Booking Price</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d51f2722-2da5-4fb8-903d-89ce9190b342">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b903bb90-5430-45db-a8ea-0db812622226">
+            <TableID>Facts_Booking</TableID>
+            <ColumnID>BookingPrice</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="16bb97f1-df93-4c07-9bde-d4c6fef7917c">
+      <ID>Date Key</ID>
+      <Name>Date Key</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f5a3b83c-6a27-4d58-9009-b7f627df5063">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ce597dfb-3fe7-4c18-a85f-9549a814c736">
+            <TableID>Dimentions_Dates</TableID>
+            <ColumnID>DateKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="45373d4a-c144-416e-aefe-513a541441a9">
+          <AttributeID>Hour</AttributeID>
+          <Name>Hour</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="1e0a62d2-b24a-4502-bfe7-8a8a00adb46f">
+          <AttributeID>Day Name Of Week</AttributeID>
+          <Name>Day Name Of Week</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ec2968a8-9503-437b-9faf-dd9a3d79aa02">
+          <AttributeID>Month Name</AttributeID>
+          <Name>Month Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2c1cd6ac-665a-4030-827b-a5c575df0f02">
+          <AttributeID>Month Number Of Year</AttributeID>
+          <Name>Month Number Of Year</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f287d71d-0915-4924-88c9-6464178fc7ee">
+          <AttributeID>Year</AttributeID>
+          <Name>Year</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9a4658d6-6979-4021-86a2-c68b37f9464d">
+      <ID>Hour</ID>
+      <Name>Hour</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a85c88c7-2e21-4464-92d5-2d2f2a10b5fa">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="181c7cfa-a1a5-473b-9b87-19b59729ce77">
+            <TableID>Dimentions_Dates</TableID>
+            <ColumnID>Hour</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0ade4810-9c3d-4ba2-9275-2eeb406e4e60">
+      <ID>Day Name Of Week</ID>
+      <Name>Day Name Of Week</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="72687b8e-5122-4804-93b2-de0dd10b9cff">
+          <DataType>WChar</DataType>
+          <DataSize>11</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ab202bc4-32a2-4e10-87c7-d6a0fd152499">
+            <TableID>Dimentions_Dates</TableID>
+            <ColumnID>DayNameOfWeek</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="03e0bccf-9ee7-43fe-a5ef-df7bf0e416ae">
+      <ID>Month Name</ID>
+      <Name>Month Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7bbaaa9c-5f9d-4d96-b4c6-ee2798bc1f0d">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="161ea6d3-5dcb-4262-a515-37adf582f599">
+            <TableID>Dimentions_Dates</TableID>
+            <ColumnID>MonthName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a7cb521c-09ff-49cf-b754-465a6abab229">
+      <ID>Month Number Of Year</ID>
+      <Name>Month Number Of Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f1cd39c4-0d5c-4c3b-9114-d1c0f48f2ce9">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="86a5c250-9709-4ed6-a38d-e2964fd419e9">
+            <TableID>Dimentions_Dates</TableID>
+            <ColumnID>MonthNumberOfYear</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="de00a0de-8332-4812-899c-1a37a24971c7">
+      <ID>Year</ID>
+      <Name>Year</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="42242d62-ea92-4a30-9efb-da2fccdc0641">
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="191a5629-cecc-48c5-8602-fefe03f00b13">
+            <TableID>Dimentions_Dates</TableID>
+            <ColumnID>Year</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="072a0e06-f481-4d6a-bd05-be611cf1c97d">
+      <ID>Room Id</ID>
+      <Name>Room Id</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5718dd66-1f74-42d7-885d-f8985d7aa89c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d771167d-5cef-48cb-84e4-67a0cd5197ee">
+            <TableID>Dimentions_Room</TableID>
+            <ColumnID>RoomId</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="387d2c0a-aeae-43d9-b985-02e4862770b5">
+          <AttributeID>Room Type Name</AttributeID>
+          <Name>Room Type Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="93f6378e-7eda-496b-bfd7-3035aabc542e">
+          <AttributeID>City Name</AttributeID>
+          <Name>City Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2419c671-448f-4a08-af7f-05805afc60dd">
+          <AttributeID>Lux Degree</AttributeID>
+          <Name>Lux Degree</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="36df506d-1573-4319-ad83-1c89522640d1">
+          <AttributeID>Star</AttributeID>
+          <Name>Star</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="91a6e738-087e-4042-9f70-9171c1ff1e40">
+      <ID>Room Type Name</ID>
+      <Name>Room Type Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8a60ed5a-2763-434c-949d-d55baec1b991">
+          <DataType>WChar</DataType>
+          <DataSize>300</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eb071ed4-cf8f-4e8f-adb1-40cc3d64c11e">
+            <TableID>Dimentions_Room</TableID>
+            <ColumnID>RoomTypeName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d2a85618-7ac4-458d-ac1c-cae0a1474af0">
+      <ID>City Name</ID>
+      <Name>City Name</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="018ab47c-a78e-402c-9e8d-61e8be9f68ca">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="ce774437-726f-4aa7-b74a-b99bc1e51f24">
+            <TableID>Dimentions_Room</TableID>
+            <ColumnID>CityName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8dd2985f-aaa7-42e7-ab34-0ae67fb1c38d">
+      <ID>Lux Degree</ID>
+      <Name>Lux Degree</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="60206693-c43f-4e6d-bde5-802d76fd8ba5">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="65550cd5-1391-4748-be28-ef88e2c17235">
+            <TableID>Dimentions_Room</TableID>
+            <ColumnID>LuxDegree</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4f54edfd-2f27-4ef5-b4d9-0156e817a2fb">
+      <ID>Star</ID>
+      <Name>Star</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="ae8fdee0-ac55-4628-9605-1d2f17ff3fad">
+          <DataType>UnsignedTinyInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="21d68b8b-a55b-4189-b45d-0abf8e20921a">
+            <TableID>Dimentions_Room</TableID>
+            <ColumnID>Star</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

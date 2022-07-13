@@ -1,0 +1,75 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>MultidimensionalHotelBooking</Database>
+    <Server>HOME-PC\SQL2019</Server>
+    <ConnectionString>Data Source=HOME-PC\SQL2019;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>Default</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>Qn6SA9e90udnYtTCJlVnzCoQKiU=12.07.2022 23:34:1712.07.2022 23:30:26</TimeStamp>
+        <ID>
+          <String>DWH Hotels</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>OGGbmNinLBFoUFgjWd0Mb5dB31s=12.07.2022 23:30:3712.07.2022 23:30:37</TimeStamp>
+        <ID>
+          <String>DWH Hotels</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>5cepGDHEFSrp8HXZ6VLXA1Yiym8=12.07.2022 23:41:4712.07.2022 23:41:47</TimeStamp>
+        <ID>
+          <String>Booking</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>t3VEhQnYKtTu6bo/iBPWMc8DZx0=12.07.2022 23:42:1212.07.2022 23:42:12</TimeStamp>
+        <ID>
+          <String>Dates</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Ww7H0voVSEkIgvog1ISveX6yu+0=12.07.2022 23:42:1312.07.2022 23:42:12</TimeStamp>
+        <ID>
+          <String>Room</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>AzPbHizfkYpx1anyhYAQU94jBjY=12.07.2022 23:42:1312.07.2022 23:42:12dUdKZQ9U9nZLzYxQkWttqF4KaC4=12.07.2022 23:42:1312.07.2022 23:42:12</TimeStamp>
+        <ID>
+          <String>DWH Hotels</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>h7rJwvoFMvY6zo6PxN55czxbmjw=12.07.2022 19:13:1112.07.2022 19:13:10</TimeStamp>
+      <ID>
+        <String>MultidimensionalHotelBooking</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2022-07-12T20:42:38.183333Z</LastDeployed>
+</DeploymentSnapshot>

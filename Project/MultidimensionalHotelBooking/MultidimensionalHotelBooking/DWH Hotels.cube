@@ -1,0 +1,532 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="92a67056-8e62-4649-91ca-408c269348e8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DWH Hotels</ID>
+  <Name>DWH Hotels</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="27c672e0-62ef-43cc-a7bd-faa56c19fdb7">
+      <ID>Dates</ID>
+      <Name>Dates</Name>
+      <DimensionID>Dates</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="c31f4bad-d258-4789-8eb8-7527bab933d3">
+          <AttributeID>Date Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="b9fc834a-c6ff-4e8a-809f-27fd5770f35d">
+      <ID>Room</ID>
+      <Name>Room</Name>
+      <DimensionID>Room</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="425b444a-e138-40b9-817c-491c39f6a476">
+          <AttributeID>Room Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="6953cbd0-faf3-4a29-b413-29887867125e">
+      <ID>Guest</ID>
+      <Name>Guest</Name>
+      <DimensionID>Guest</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="93b9e0ec-6ad1-4ffd-a465-b0a22876eb51">
+          <AttributeID>Booking Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="1bdb2885-53a3-47db-9465-6c858b2b84de">
+          <AttributeID>Guest - Booking Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="08f1bf10-2388-4ff3-85b3-fafb9fb6bac6">
+      <ID>Booking</ID>
+      <Name>Booking</Name>
+      <DimensionID>Booking</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="72f52a82-3ffd-47e8-a44d-d23a778a6f45">
+          <AttributeID>Booking Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a1f521da-dd1f-4088-9ea9-e270c14b7f98">
+          <AttributeID>Room Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="071c6c81-934b-41f4-a82e-a318d0607521">
+      <ID>Dates</ID>
+      <Name>Dates</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="db544c45-73c3-4ace-a0af-e65be5278bb5">
+          <ID>Hour</ID>
+          <Name>Hour</Name>
+          <Source dwd:design-time-name="acc92012-a4f8-4f67-8781-ec955776ff92">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2e134939-089e-48d6-9413-d69a51bafe72">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>Hour</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9072446f-703a-4f88-b9bb-830075be67e5">
+          <ID>Day Number Of Week</ID>
+          <Name>Day Number Of Week</Name>
+          <Source dwd:design-time-name="3ca7da52-ddef-4561-8883-3990c66bd348">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="21266cfc-562b-4b11-a861-4c402c481086">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>DayNumberOfWeek</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6f914081-54ea-47bd-a0a4-119d0fabab82">
+          <ID>Day Number Of Month</ID>
+          <Name>Day Number Of Month</Name>
+          <Source dwd:design-time-name="ec868812-697a-4998-916f-4ac949c2c117">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="f11c6dcb-e935-44e3-89c3-e8efa5414cf9">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>DayNumberOfMonth</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="32535a8a-6d85-47e3-a082-ea7d2042dbb1">
+          <ID>Day Number Of Year</ID>
+          <Name>Day Number Of Year</Name>
+          <Source dwd:design-time-name="18322461-3373-4c6c-9349-f23af7dd5488">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ffd8c669-d1fd-40fe-9268-699a789098e8">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>DayNumberOfYear</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="2ab221b9-f70c-473f-942b-b17e587cc205">
+          <ID>Week Number Of Year</ID>
+          <Name>Week Number Of Year</Name>
+          <Source dwd:design-time-name="e8ac1baa-168f-4482-ac25-726ae647c0ac">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="49b2d6cd-4998-49f2-9a74-c225e1e41e24">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>WeekNumberOfYear</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="920f38a2-7381-48ee-a74c-c7779193d93a">
+          <ID>Month Number Of Year</ID>
+          <Name>Month Number Of Year</Name>
+          <Source dwd:design-time-name="9faceb9d-16c8-47f5-892b-f3cd854866b2">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ae9561d3-6814-454e-bcb8-ac1085852466">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>MonthNumberOfYear</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="50ef5204-b373-4110-898a-da358e37fbeb">
+          <ID>Year</ID>
+          <Name>Year</Name>
+          <Source dwd:design-time-name="2c0ddeba-6621-4aaf-9df4-21ffbf5d3062">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="76818175-0fb6-4f09-8612-3cd3357ae027">
+              <TableID>Dimentions_Dates</TableID>
+              <ColumnID>Year</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="ea2de56f-c082-4c32-98fd-15454c0fd8b6">
+          <ID>Dates Count</ID>
+          <Name>Dates Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="7032e54a-1e07-4dc4-ba7d-4863a45c5c42">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="4cf320d5-c731-41f0-bfd0-65446fb42cb3">
+              <TableID>Dimentions_Dates</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="72d98dae-268f-4240-a486-d89d8b48aa87">
+          <CubeDimensionID>Dates</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="dcf440d6-884d-44c3-aac8-ab21b9b8fb0b">
+              <AttributeID>Date Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="d8661dbc-a97a-4209-8074-b139cf3d80e2">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4793cf0c-f606-4cdf-a42a-7a4adc9d7fc4">
+                    <TableID>Dimentions_Dates</TableID>
+                    <ColumnID>DateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="d212b774-3df9-40a2-8f85-2dc0f1893f11">
+      <ID>Room</ID>
+      <Name>Room</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="3f92b2a5-712d-438b-80b7-00f08d5d2d90">
+          <ID>Room Price For Day</ID>
+          <Name>Room Price For Day</Name>
+          <Source dwd:design-time-name="02766c3d-188f-4983-b85d-b39036a7afb0">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8773c523-be56-4180-9509-616a22347d9c">
+              <TableID>Dimentions_Room</TableID>
+              <ColumnID>RoomPriceForDay</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c0eaa692-14de-488e-bc5e-e2bdd1a5142d">
+          <ID>Lux Degree</ID>
+          <Name>Lux Degree</Name>
+          <Source dwd:design-time-name="a8f70605-71e6-404f-85d3-d8f7dbd2ed37">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2265eaed-68f2-4baa-b1d2-2fbf6e13c6ee">
+              <TableID>Dimentions_Room</TableID>
+              <ColumnID>LuxDegree</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="6f1957f2-c993-45a4-b82a-ef30811f8f51">
+          <ID>Star</ID>
+          <Name>Star</Name>
+          <Source dwd:design-time-name="b1ebf278-6a83-4197-a8b9-61c5049af23d">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="b2a8e2eb-1f95-4a89-989d-43f4f6fda276">
+              <TableID>Dimentions_Room</TableID>
+              <ColumnID>Star</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fdea9e90-257d-4222-bda1-cb8b78eefd5b">
+          <ID>Square</ID>
+          <Name>Square</Name>
+          <Source dwd:design-time-name="e02c8149-3e8c-4a14-9c6f-009434bcb0cc">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="90b850c4-2687-4247-9a62-9d4a5487beb8">
+              <TableID>Dimentions_Room</TableID>
+              <ColumnID>Square</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="db3751bf-56ac-48b5-8ace-d79f1b69de02">
+          <ID>Max Quantity Visitors</ID>
+          <Name>Max Quantity Visitors</Name>
+          <Source dwd:design-time-name="3ebce1a5-a390-43a0-99f0-736407ecbe6a">
+            <DataType>UnsignedInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="902b1467-965c-463c-9c64-28f20b874164">
+              <TableID>Dimentions_Room</TableID>
+              <ColumnID>MaxQuantityVisitors</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="15469dca-f48b-4317-b7e4-cf676dddaa84">
+          <ID>Room Count</ID>
+          <Name>Room Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="3ee9b809-e6b9-4007-8f5f-f13a327db4e8">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="62b1899a-0b9e-4001-aace-2b35781c2e2c">
+              <TableID>Dimentions_Room</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="6fb1bbb8-4e37-4d96-be56-3d929e675469">
+          <CubeDimensionID>Room</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="b9e998f9-c74f-472e-827f-b0b3028c74b0">
+              <AttributeID>Room Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b896c2b3-81ba-41e6-af21-20db2406da5b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ca9e8e6f-a2d8-40aa-8005-980587bf9213">
+                    <TableID>Dimentions_Room</TableID>
+                    <ColumnID>RoomId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="52734ed8-2119-4c3b-bc3d-9fcc694cfd80">
+      <ID>Guest</ID>
+      <Name>Guest</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="a88f9a44-9da7-405f-865d-624407d7d908">
+          <ID>Passport Series</ID>
+          <Name>Passport Series</Name>
+          <Source dwd:design-time-name="a95d9f2c-0058-4890-9cdf-9c2168e6a53f">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d026697e-6bb0-410d-9b40-eb93d22cbf9b">
+              <TableID>Dimentions_Guest</TableID>
+              <ColumnID>PassportSeries</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="9253dfb2-8546-4a80-9973-875a16538b75">
+          <ID>Passport Number</ID>
+          <Name>Passport Number</Name>
+          <Source dwd:design-time-name="b8968936-2272-421e-ac54-ea907cafbb8d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="84be6e6e-b493-44be-bec8-ecee794ef5ab">
+              <TableID>Dimentions_Guest</TableID>
+              <ColumnID>PassportNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a5eeaa25-6b14-4ed0-a73f-85502a841880">
+          <ID>Phone Number</ID>
+          <Name>Phone Number</Name>
+          <Source dwd:design-time-name="139bcbfc-1648-424c-971c-bbb450f005d8">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="93cf0ffe-6fda-42ba-8193-2fc86a01a5e8">
+              <TableID>Dimentions_Guest</TableID>
+              <ColumnID>PhoneNumber</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="db6ef58e-a8ac-46c9-9b23-0122b6f252a5">
+          <ID>Guest Count</ID>
+          <Name>Guest Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="7071f019-eced-4063-ad57-251a6fb2ffe3">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="6a09b383-1d8e-4034-b23e-7de952881bba">
+              <TableID>Dimentions_Guest</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="00830df8-4a07-46c7-908e-94f8a4167ea1">
+          <CubeDimensionID>Guest</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="af509e56-56c7-4b30-b243-4ea69575d323">
+              <AttributeID>Booking Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="cb96a831-6d6b-4271-b2fe-cc7f0038de91">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1428f7ca-0936-4645-bc37-911eb936522b">
+                    <TableID>Dimentions_Guest</TableID>
+                    <ColumnID>BookingId</ColumnID>
+                  </Source>
+                </KeyColumn>
+                <KeyColumn dwd:design-time-name="abe6157d-9fb9-4c3b-bcb6-51f0c2aa5fe6">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b69734c2-9aae-4275-9d22-eb757e97fe6c">
+                    <TableID>Dimentions_Guest</TableID>
+                    <ColumnID>PersonalDataId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="54eb73a9-aaad-4eca-94c1-2b6f579ddff4">
+          <CubeDimensionID>Booking</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ee2e93e7-b5c7-4a8c-a618-9f6edabb96b7">
+              <AttributeID>Booking Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="afe186ad-80ff-4593-88f3-caaedc558d88">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="24346400-e100-4a70-a62f-634910e333ba">
+                    <TableID>Dimentions_Guest</TableID>
+                    <ColumnID>BookingId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ReferenceMeasureGroupDimension" dwd:design-time-name="21938433-5599-439e-b6b1-fb9117fec174">
+          <CubeDimensionID>Room</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bf71259e-18d0-47e5-9a13-b5670cf4d9b2">
+              <AttributeID>Room Id</AttributeID>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+          <IntermediateCubeDimensionID>Booking</IntermediateCubeDimensionID>
+          <IntermediateGranularityAttributeID>Room Id</IntermediateGranularityAttributeID>
+          <Materialization>Regular</Materialization>
+          <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="3e20fb9e-a8bd-4f94-ae3f-7a578c7ff576">
+      <ID>Booking</ID>
+      <Name>Booking</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="53203ae5-2238-4691-9818-ee039b1f2864">
+          <ID>Arrival Date Key</ID>
+          <Name>Arrival Date Key</Name>
+          <Source dwd:design-time-name="ae1e12cf-a43b-466c-808d-0187cc9bd1e9">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="cb2031bd-6a88-4886-b504-48ef2cb26ca1">
+              <TableID>Facts_Booking</TableID>
+              <ColumnID>ArrivalDateKey</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="a6bf399e-bd15-4076-ba67-896ebeb1fdc9">
+          <ID>Departure Date Key</ID>
+          <Name>Departure Date Key</Name>
+          <Source dwd:design-time-name="815225a6-d9d0-4ada-84c0-d08657b914fa">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="a5049c95-2f31-4ddf-ab35-74bb137d171d">
+              <TableID>Facts_Booking</TableID>
+              <ColumnID>DepartureDateKey</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4de94344-3b15-4aea-9c66-a2c1273d6a10">
+          <ID>Booking Price</ID>
+          <Name>Booking Price</Name>
+          <Source dwd:design-time-name="dcafada8-ecd0-4e5e-8108-9703aedc9969">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="7e4a7fb7-c3b1-45eb-9a1b-5a4c03722b4b">
+              <TableID>Facts_Booking</TableID>
+              <ColumnID>BookingPrice</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="fe56e504-9679-48ad-92d1-1495481e2e0a">
+          <ID>Booking Count</ID>
+          <Name>Booking Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="7c4f01c6-ba16-4489-9d0b-390e68d3bf12">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="6ade5dc5-ac83-4c23-b1ed-4ef9d7f3dcd9">
+              <TableID>Facts_Booking</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="DegenerateMeasureGroupDimension" dwd:design-time-name="e1367c29-50b9-42d5-830b-0da8a835ad54">
+          <CubeDimensionID>Booking</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e26f75ad-4833-422a-b914-3b36a3289a2f">
+              <AttributeID>Booking Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="8743e17c-3dd8-4790-b538-1629e61ff636">
+                  <DataType>BigInt</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="caa61052-97a6-4511-b33e-0e256f824fef">
+                    <TableID>Facts_Booking</TableID>
+                    <ColumnID>BookingId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="d022e68d-52c9-4841-8c90-20f26a3df71f">
+          <CubeDimensionID>Room</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="93c5c3f5-1280-4718-953a-8f6abfb0ccdd">
+              <AttributeID>Room Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a58f531c-4733-4214-af87-8b9e4cfefcd4">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4c4a581e-00a8-4189-a5b3-c9a3f267b561">
+                    <TableID>Facts_Booking</TableID>
+                    <ColumnID>RoomId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="d180a801-262c-40f5-8b1e-337d70c8957c">
+    <DataSourceViewID>DWH Hotels</DataSourceViewID>
+  </Source>
+</Cube>
