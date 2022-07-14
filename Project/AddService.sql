@@ -108,7 +108,7 @@ Begin
 		If (@staffId Is Null)
 			Throw 50003, 'Ќедостаточно персонала дл€ заказа', 4
 		--создаем смену 
-		Exec [Order].AddShift @StaffId = @staffId, @ServiceId = @ServiceId
+		Exec [Order].AddShift @StaffId = @staffId, @ServiceId = @ServiceId, @HotelId = @HotelId
 		Fetch Next From staffTypesCursor Into @staffType
 	End
 	Close staffTypesCursor
