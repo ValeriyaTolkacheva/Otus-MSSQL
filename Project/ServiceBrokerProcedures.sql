@@ -88,7 +88,7 @@ Begin
 	Select @Message As ReceivedRequestMessage, @MessageType; 
 	
 	-- Confirm and Send a reply
-	If @MessageType=N'//WWI/SB/RequestMessage'
+	If @MessageType=N'//DH/Message/Invoice/Request'
 	Begin
 		Set @ReplyMessage =N'<ReplyMessage> Message received</ReplyMessage>'; 
 	
